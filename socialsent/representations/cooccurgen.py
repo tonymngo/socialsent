@@ -13,7 +13,7 @@ def run(word_gen, index, window_size, out_file):
         pair_counts = _process_context(context, pair_counts, window_size)
     import pyximport
     pyximport.install(setup_args={"include_dirs": np.get_include()})
-    from representations import sparse_io
+    from socialsent.representations import sparse_io
     sparse_io.export_mat_from_dict(pair_counts, out_file)
 
 def _process_context(context, pair_counts, window_size):

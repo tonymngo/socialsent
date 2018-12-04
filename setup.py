@@ -12,5 +12,5 @@ setup(name='socialsent',
                           'keras==0.3',
                           'sklearn',
                           'theano'],
-      package_data= {'socialsent' : ['data/lexicons/*.json']},
+      package_data= {'socialsent' : ['data/lexicons/*.json','representations/*','historical/*','reddit/*']},
       zip_safe=False)

@@ -1,6 +1,6 @@
 import heapq
 
-from scipy.sparse import csr_matrix
+from scipy.sparse import csr_matrix, load_npz
 from sklearn import preprocessing
 import numpy as np
 

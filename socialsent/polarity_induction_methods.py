@@ -190,8 +190,9 @@ def _bootstrap_func(embeddings, positive_seeds, negative_seeds, boot_size, score
     pos_seeds = np.random.choice(positive_seeds, boot_size)
     neg_seeds = np.random.choice(negative_seeds, boot_size)
     polarities = score_method(embeddings, pos_seeds, neg_seeds, **kwargs)
-    return {word:score for word, score in polarities.iteritems() if
-            not word in positive_seeds and not word in negative_seeds}
+    return polarities
+    #return {word:score for word, score in polarities.iteritems() if
+    #        not word in positive_seeds and not word in negative_seeds}
 
 def bootstrap(embeddings, positive_seeds, negative_seeds, num_boots=10, score_method=random_walk,
         boot_size=7, return_all=False, n_procs=15, **kwargs):
